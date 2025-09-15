@@ -15,9 +15,8 @@ function agregarAmigo(){
     nuevoAmigo.value = '';
 
     actualizarAmigos()
+    reiniciarAmigoSorteado()
 }
-
-   
 
 function actualizarAmigos() {
     let listaAmigos = document.getElementById("listaAmigos");
@@ -28,4 +27,16 @@ function actualizarAmigos() {
     }
 }
 
+function sortearAmigo() {
+    if (amigos.length > 0) {
+        let ganador = Math.floor(Math.random() * (amigos.length - 1))
+        let resultado = document.getElementById("resultado");
+        resultado.innerHTML = "<li>El ganador/a es: "+amigos[ganador]+" 🥳🥳</li>"
+    }
+}
+
+function reiniciarAmigoSorteado() {
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = ""
+}
 
